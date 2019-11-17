@@ -1,0 +1,15 @@
+#commingMessage {
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+    height: 25%;
+}
+
+#sendMessage {
+    position: fixed;
+    bottom: 0;
+    width: 15%;
+    height: 26%;
+    left: 83%;
+}
+
