@@ -3,19 +3,19 @@
 
 <head>
     <title>Socket.IO chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./style.css">
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="./function.js"></script>
 </head>
 
 <body onload="ready()">
     <div id="newMessage">
-            <input type="text" id="username" placeholder="Username" required="">
-            <textarea id="commingMessage" type="text" placeholder="Your message here" required=""></textarea>
-            <input id="sendMessage" type="button" value="SEND">
+        <input type="text" id="username" placeholder="Username" required hidden>
+        <textarea id="commingMessage" type="text" placeholder="Your message here" required=""></textarea>
+        <input id="sendMessage" type="button" value="SEND">
     </div>
-    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./function.js"></script>
 </body>
 
 </html>
