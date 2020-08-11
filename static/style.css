@@ -1,19 +1,165 @@
-#commingMessage {
-    position: fixed;
-    bottom: 0;
-    width: 80%;
-    height: 15%;
-}
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  html {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size:18px;
+  }
 
-#sendMessage {
-    position: fixed;
-    bottom: 0;
-    width: 15%;
-    height: 16%;
-    left: 83%;
-}
-#username{
-	position: fixed;
-	bottom: 16%;
-}
+  
+  @media only screen and (max-width: 600px) {
+    html{
+        font-size: 16px;
+    }  
+  }
 
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+.conversation {
+    height: 90vh;
+    position: relative;
+    background: url("./src/images/default-wallpaper.png") repeat;
+    z-index: 0;
+  }
+
+  .conversation__container {
+    height: 90vh;
+    overflow-x: hidden;
+    padding: 0 1rem;
+    margin-bottom: 1.1rem;
+  }
+  
+  .conversation__container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .message {
+    color: #000;
+    clear: both;
+    font-size: 1rem;
+    padding: .5rem;
+    position: relative;
+    margin: .5rem 0;
+    max-width: 85%;
+    word-wrap: break-word;
+    z-index: -1;
+  }
+
+  .message:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  .message:first-child {
+    margin: 1rem 0 .5rem;
+  }
+
+  .right {
+    background: #e1ffc7;
+    border-radius: 10px 0px 10px 10px;
+    float: right;
+  }
+
+  .right:after {
+    border-width: 0px 0 10px 10px;
+    border-color: transparent transparent transparent #e1ffc7;
+    top: 0;
+    right: -10px;
+  }
+
+  .left {
+    background: #fff;
+    border-radius: 0px 10px 10px 10px;
+    float: left;
+  }
+  
+  .left:after {
+    border-width: 0px 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+    top: 0;
+    left: -10px;
+  }
+
+  .conversation__compose {
+    overflow: hidden;
+    width: 90vw;
+    z-index: 2;
+    position:fixed;
+    bottom:.5rem;
+    left:4.5%;
+    border-radius:3rem;
+    padding:.5rem .7rem;
+    background: #fff;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .conversation__compose{
+      width: 100vw;
+      left: 0;
+      bottom:.2rem;
+      padding:.3rem .5rem;
+    }  
+  }
+
+  .conversation__compose>div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .conversation__compose div,
+  .conversation__compose input {
+    height: 100%;
+  }
+  
+  .conversation__compose .input-msg {
+    border: 0;
+    font-size: 1.1rem;
+    width: 95%;
+    margin: 0;
+    outline: none;
+  }
+  
+  .conversation__compose .send {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    flex: 0 0 auto;
+    padding: 0;
+    position: relative;
+    outline: none;
+  }
+  
+  .conversation__compose .send .circle {
+    background: #008a7c;
+    border-radius: 50%;
+    color: #fff;
+    position: relative;
+    width: 2.24rem;
+    height: 2.24rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .conversation__compose .send .circle i {
+    font-size: 1.42rem;
+    margin-left: 0.05rem;
+  }

@@ -1,21 +1,31 @@
 <!doctype html>
 <html>
-
-<head>
-    <title>Socket.IO chat</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <title>Messenger</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/icons/css/material-design-iconic-font.css">
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
-</head>
-
-<body onload="ready()">
-    <div id="newMessage">
-        <input type="text" id="username" placeholder="Username" required hidden>
-        <textarea id="commingMessage" type="text" placeholder="Your message here" required=""></textarea>
-        <input id="sendMessage" type="button" value="SEND">
-    </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="./function.js"></script>
-</body>
+  </head>
+  <body class="conversation" onload="ready()">
+      <main id="conversation__area" class="conversation__container">
+        
+        <div class="message right">Message1</div>
+        <div class="message left">Message2</div>
+        <div class="message right">Message3</div>        
+      </main>
 
+      <div  class="conversation__compose">
+        <div id="newMessage">
+            <input class="input-msg" id="commingMessage" name="input" placeholder="Type a message" autocomplete="off" autofocus>
+            <button id="sendMessage" class="send">
+                <div class="circle">
+                  <i class="zmdi zmdi-mail-send zmdi-hc-2x"></i>
+                </div>
+            </button>
+        </div>
+      </div>
+  </body>
 </html>
