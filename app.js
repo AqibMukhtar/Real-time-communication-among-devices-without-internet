@@ -11,6 +11,11 @@ io.on('connection', socket => {
     })
 });
 
-http.listen(3000, function () {
-    console.log('listening on *:3000');
+
+
+http.listen(3000, function () {});
+
+
+require('dns').lookup(require('os').hostname(), function(err,add,fam){
+	console.log('listening on '+add+':3000');
 });
